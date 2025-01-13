@@ -35,7 +35,6 @@ function defineAPIProductEndpoints(aplication, dbPoolPromise) {
             const ProduktID = productResult.recordset[0].ProduktID;
             console.log("Inserted product with ID:", ProduktID);
 
-            //const insertAllergens = new sql.Request(transaction);
             for (const alergen of Alergeny) {
                 const insertAllergen = new sql.Request(transaction);
                 insertAllergen.input("ProduktID", sql.Int, ProduktID);

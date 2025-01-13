@@ -1,21 +1,21 @@
 const path = require("path");
 const projectPath = path.join(__dirname, "..");
 
-function defineHTMLEndpoints(aplication,isAuthenticated){
+function defineHTMLEndpoints(aplication){
   
-    aplication.get("/product-add", isAuthenticated, (req, res) => {
+    aplication.get("/product-add", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "product_add.html"));
     });
   
-    aplication.get("/user-add", isAuthenticated, (req, res) => {
+    aplication.get("/user-add", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "user_add.html"));
     });
   
-    aplication.get("/products-list", isAuthenticated, (req, res) => {
+    aplication.get("/products-list", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "products_list.html"));
     });
   
-    aplication.get("/", isAuthenticated, (req, res) => {
+    aplication.get("/", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "index.html"));
     });
   
@@ -23,18 +23,18 @@ function defineHTMLEndpoints(aplication,isAuthenticated){
       res.sendFile(path.join(projectPath, "html", "login.html"));
     });
 
-    aplication.get("/category-add",isAuthenticated, (req, res) => {
+    aplication.get("/category-add", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "category_add.html"));
     });
 
-    aplication.get("/category-list",isAuthenticated, (req, res) => {
+    aplication.get("/category-list", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "category_list.html"));
     });
 
-    aplication.get("/user-list",isAuthenticated, (req, res) => {
+    aplication.get("/user-list", (req, res) => {
       res.sendFile(path.join(projectPath, "html", "user_list.html"));
     });
-    aplication.get("/order-add",isAuthenticated, (req, res) => {
+    aplication.get("/order-add", (req, res) => {
         res.sendFile(path.join(projectPath, "html", "order_add.html"));
     });
 }
